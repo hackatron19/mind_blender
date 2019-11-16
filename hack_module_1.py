@@ -6,7 +6,7 @@ import sys
 import pyttsx3
 engine = pyttsx3.init()
 #import AAdd
-import attendance_trial
+import atten_trail_trail
 
 root = Tk()
 img = ImageTk.PhotoImage(Image.open("for_button.jpeg"))
@@ -65,7 +65,7 @@ def myCmd2 ():
 ment = StringVar()
 def start():
     
-    attendance_trial.main(ment.get())
+    atten_trail_trail.main(ment.get())
     root = Tk()
     img = ImageTk.PhotoImage(Image.open("for_button1.jpeg"),master=root)
     panel = Label(root, image = img)
