@@ -65,7 +65,7 @@ def myCmd2 ():
 ment = StringVar()
 def start():
     
-   
+    attendance_trial.main(ment.get())
     root = Tk()
     img = ImageTk.PhotoImage(Image.open("for_button1.jpeg"),master=root)
     panel = Label(root, image = img)
@@ -78,7 +78,7 @@ def start():
     root.geometry("1055x500+150+150")
     root.title("ATTENDANCE")
     root.iconbitmap(r'icon.ico')
-       
+       ############################33
    # button2 = Button(root, text="DEVELOPERS",width = 20,height = 2, font = 'arial 12 bold',command = dev).place(x=120,y=200)
     button3 = Button(root, text="DATABASE",width = 20,height = 2, font = 'arial 12 bold',command = myCmd).place(x=120,y=200)
     button4 = Button(root, text="QUIT",width = 20,height = 2, font = 'arial 12 bold',command=myCmd2).place(x=120,y=300)
