@@ -37,7 +37,7 @@ def myCmd1 ():
 
 def myCmd2 ():
     os.system('cmd /c kill.bat ')
-    os.system("start C:Users/hp/Desktop/GUI/click.wav")
+    #os.system("start C:Users/hp/Desktop/GUI/click.wav")
     
 
 
@@ -48,12 +48,7 @@ def myCmd2 ():
 ######################
 
     
-def myCmd1 ():
-    pass
 
-def myCmd2 ():
-    pass
-    
     
 '''def mhello1():#for database
     mtext = ment.get()
@@ -112,7 +107,7 @@ def mhello():
             engine.say("You are logged in")
             engine.runAndWait()
             mLable2 = Label(root, text = "You are logged in").place(x=460,y=30)
-           # main_using_csv.call('Date : ',mtext)
+            main_using_csv.call('Date : ',mtext)
         '''else:
              mLable2 = Label(root, text = "Error").place(x=480,y=50)'''
 
