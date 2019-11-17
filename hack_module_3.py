@@ -1,7 +1,8 @@
 from tkinter import *
+from tkinter import messagebox
 from PIL import ImageTk, Image
 import os
-#import main_using_csv
+import main_using_csv
 import sys
 import pyttsx3
 engine = pyttsx3.init()
@@ -13,7 +14,7 @@ img = ImageTk.PhotoImage(Image.open("for_button.jpeg"))
 panel = Label(root, image = img)
 panel.pack(side = "bottom", fill = "both", expand = "yes")
 
-heading = Label(root, text="Enter Your ID", font='arial 15 bold', bg = 'white', fg = '#ebb434').place(x=450,y=400)
+heading = Label(root, text="Enter Your ID", font='arial 18 bold', bg = '#495757', fg = '#46e012').place(x=450,y=400)
 #heading1 = Label(root, text="Attendance System", font='arial 15 bold').place(x=650,y=390)
 #heading2 = Label(root, text="Powered by Python", font='arial 15 bold',fg='#03fcad').place(x=650,y=430)
 
@@ -101,25 +102,33 @@ def start():
 def mhello():
     mtext = ment.get()
     print(mtext)
-    proceed= ["aparna","ashiwn"]
-    for i in proceed :
-        if i=="aparna" or i=="ashwin":
-            engine.say("You are logged in")
-            engine.runAndWait()
-            mLable2 = Label(root, text = "You are logged in").place(x=460,y=30)
-            main_using_csv.call('Date : ',mtext)
-        '''else:
-             mLable2 = Label(root, text = "Error").place(x=480,y=50)'''
+    
+    if mtext =="aparna" or mtext =="ashwin":
+        engine.say("You are logged in")
+        engine.runAndWait()
+        mLable2 = Label(root, text = "You are logged in",bg = '#46404a',font='arial 15 bold').place(x=460,y=30)
+        mLable3 = Label(root, text = "Click on start attendance",bg = '#46404a',font='arial 15 bold').place(x=440,y=60)
+        main_using_csv.call('Date : ',mtext)
+        #messagebox.showinfo("Title","a Tk messsage yozz")
 
+    
+    else:
+        
+        
+        messagebox.showinfo("Error","invalid USER ID")
+        
+         
+         #messagebox.showinfo("Title","a Tk messsage yozz")
+        
         
 
-    #return
+    return
 
 button1 = Button(root, text="START ATTENDANCE",width = 50,height = 2, font = 'arial 12 bold',bg='#ebb434',command = start).place(x=10,y=530)
 
 
 entry  = Entry(root,show="*",textvariable=ment, width = 70,font='Calibri 15').place(x=170,y=450)
-entry_button = Button(root,text = "Log in",command = mhello, fg = 'red',bg = 'blue',font = 'arial 12 bold',width = 50,height=2).place(x=530,y=530)
+entry_button = Button(root,text = "LOG IN",command = mhello, fg = '#030f21',bg = '#184b96',font = 'arial 13 bold',width = 50,height=2).place(x=530,y=530)
 
 #canvas = Canvas(root,width = 400, height =250,bg='blue').pack()
 

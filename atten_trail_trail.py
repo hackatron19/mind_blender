@@ -10,8 +10,7 @@ import numpy as np
 ##################################
 def main(identity):
     start=time.time()
-    
-    period = 100
+    period = 60
     
 #########################################
         
@@ -44,17 +43,12 @@ def main(identity):
     face_encoding1 = face_recognition.face_encodings(aparna,num_jitters = 30)[0]
     
     
-    # Load a second sample picture and learn how to recognize it.
-    #amitshah_image = face_recognition.load_image_file("amitshah1.jpg")
-    #amitshah_face_encoding = face_recognition.face_encodings(amitshah_image)[0]
-    
-    # Create arrays of known face encodings and their names
     known_face_encodings = [
             face_encoding, face_encoding1
         
     ]
     known_face_names = [
-        "ashwin", "appu"
+        "ashwin", "aparna"
         
         
     ]
@@ -64,18 +58,18 @@ def main(identity):
     face_encodings = []
     face_names = []
     #process_this_frame = True
-    kids = ['ashwin', 'appu','ankit']
+    kids = ['ashwin', 'aparna','ankit']
     
     
     process_this_frame = True
     #count = 0
     url = "http://172.16.3.0:8080/shot.jpg"
     while True:
-        img_resp = requests.get(url)
+        '''img_resp = requests.get(url)
         img_arr = np.array(bytearray(img_resp.content), dtype=np.uint8)
-        frame = cv2.imdecode(img_arr, -1)
+        frame = cv2.imdecode(img_arr, -1)'''
         # Grab a single frame of video
-       # ret, frame = video_capture.read()
+        ret, frame = video_capture.read()
     
         # Resize frame of video to 1/4 size for faster face recognition processing
         small_frame = cv2.resize(frame, (0, 0), fx=0.25, fy=0.25)
